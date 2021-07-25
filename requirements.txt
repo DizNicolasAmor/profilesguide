@@ -1,0 +1,7 @@
+Django==3.2.5
+django-allauth==0.45.0
+django-cors-headers==3.7.0
+django-rest-auth==0.9.5
+djangorestframework==3.12.4
+pylint==2.9.3
+pylint-django==2.4.4
