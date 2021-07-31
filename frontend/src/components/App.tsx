@@ -2,14 +2,15 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import Login from './Login';
 import Logout from './Logout';
-import Navbar from './Navbar';
+import NavbarComponent from './Navbar';
 import Signup from './Signup';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
     <div className='App'>
       <Router>
-        <Navbar />
+        <NavbarComponent />
         <Switch>
           <Route path='/' component={Home} exact />
           <Route path='/login' component={Login} exact />

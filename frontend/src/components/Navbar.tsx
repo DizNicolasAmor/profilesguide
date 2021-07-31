@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
-const Navbar = () => {
+const NavbarComponent = () => {
   const [isAuth, setIsAuth] = useState(false);
 
   useEffect(() => {
@@ -10,19 +10,26 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav>
-        <div>I am a navbar</div>
-        <Link to='/'>Home</Link>
-        {isAuth ? (
-            <Link to='/logout'>Logout</Link>
-        ) : (
-            <>
-            <Link to='/login'>Login</Link>
-            <Link to='/signup'>Signup</Link>
-            </>
-        )}
-    </nav>
+      <Navbar bg="light" expand="lg">
+        <Container>
+          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/login">Login</Nav.Link>
+              <Nav.Link href="/logout">Logout</Nav.Link>
+              <Nav.Link href="/signup">Signup</Nav.Link>
+              <NavDropdown title="Menu" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
   );
 };
 
-export default Navbar;
+export default NavbarComponent;
