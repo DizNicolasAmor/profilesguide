@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+import reportWebVitals from "./reportWebVitals";
 
-const rootNode = document.getElementById('root');
+const rootNode = document.getElementById("root");
 
 if (rootNode) {
   ReactDOM.render(
