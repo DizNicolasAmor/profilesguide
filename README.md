@@ -1,12 +1,17 @@
 # PROFILESGUIDE
 
-## SETUP BACKEND
+## SETUP PROJECT WITHOUT DOCKER
+
+### SETUP BACKEND
 
 **Requirements**: python3 , pip3 and virtualenv
 
 **Commands**:
 
 ```
+  # go to backend directory
+  $ cd backend
+
   # if it is the first time you set up the project, create a virtual env
   $ virtualenv env
 
@@ -25,4 +30,21 @@
 
   # run the app
   $ python3 manage.py runserver
+```
+
+### SETUP FRONTEND
+
+**Requirements**: node and npm
+
+**Commands**:
+
+```
+  # go to frontend directory
+  $ cd frontend
+
+  # if it is the first time you set up the project, install dependencies
+  $ npm i
+
+  # run the app
+  $ npm start
 ```
