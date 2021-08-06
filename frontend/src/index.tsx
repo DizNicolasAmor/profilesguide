@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { store } from "./store";
 import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
 
@@ -8,7 +10,9 @@ const rootNode = document.getElementById("root");
 if (rootNode) {
   ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </React.StrictMode>,
     rootNode
   );
