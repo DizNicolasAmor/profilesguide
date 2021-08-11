@@ -2,10 +2,16 @@ import * as Yup from "yup";
 // import { getFromStorage, setInStorage } from "./storage";
 export const inputs = [
   {
+    errorId: "id-login-email-error",
+    inputId: "id-login-email-input",
+    label: "EMAIL",
     name: "email",
     placeholder: "user@gmail.com",
   },
   {
+    errorId: "id-login-password-error",
+    inputId: "id-login-password-input",
+    label: "PASSWORD",
     name: "password",
     placeholder: "******",
   },
