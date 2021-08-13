@@ -61,18 +61,6 @@ const LoginForm: FC<LoginFormProps> = ({
         </Button>
       </div>
     </Form>
-    <div>
-      <Button
-        variant="secondary"
-        className="forgot-password m-1"
-        onClick={() => false}
-        disabled
-      >
-        Forgot password
-      </Button>
-      <div>New user?</div>
-      <a href="/signup">Sign up</a>
-    </div>
   </div>
 );
 

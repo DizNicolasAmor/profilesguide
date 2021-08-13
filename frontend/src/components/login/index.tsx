@@ -28,6 +28,9 @@ const Login: FC = () => {
             />
           )}
         />
+        <div className="mt-3">
+          <a href="/reset-password">I forgot my password</a>
+        </div>
       </div>
     </CustomSection>
   );
