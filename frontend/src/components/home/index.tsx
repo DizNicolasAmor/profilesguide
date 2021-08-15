@@ -9,7 +9,7 @@ export interface IHome {
 }
 
 const Home: FC<IHome> = ({ user }) => (
-  <CustomSection title="Welcome to the Profiles Guide" titleId="idOfHomeTitle">
+  <CustomSection title="Welcome to the Profiles Guide">
     <p className="text-center my-5">Hello {user?.email || "new user"}</p>
   </CustomSection>
 );

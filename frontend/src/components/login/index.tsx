@@ -12,7 +12,7 @@ const Login: FC = () => {
   const [messageFromServer, setMessageFromServer] = useState("");
 
   return (
-    <CustomSection title="Login Form" titleId="loginFormTitleId">
+    <CustomSection title="Login Form">
       <div className="text-center">
         <Formik
           initialValues={initialValues}
