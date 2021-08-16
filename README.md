@@ -19,7 +19,7 @@
   $ source env/bin/activate
 
   # install dependencies, if they are not installed yet
-  $ pip3 install requirements.txt
+  $ pip3 install -r requirements.txt
 
   # make migrations and migrate, if it is not already done
   $ python3 manage.py makemigrations
