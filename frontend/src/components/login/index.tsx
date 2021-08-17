@@ -17,9 +17,9 @@ const Login: FC = () => {
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
-          // onSubmit={(values, { setSubmitting }) =>
-          // submitLogin(values, { setSubmitting }, setMessageFromServer)
-          onSubmit={submitLogin}
+          onSubmit={(values, { setSubmitting }) =>
+            submitLogin(values, { setSubmitting }, setMessageFromServer)
+          }
           render={({ isSubmitting }) => (
             <LoginForm
               isSubmitting={isSubmitting}

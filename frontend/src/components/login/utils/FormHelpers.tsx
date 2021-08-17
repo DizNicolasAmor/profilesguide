@@ -30,13 +30,12 @@ export const validationSchema = Yup.object().shape({
     .required("Required"),
 });
 
-export const submitLogin = (): void =>
-  // values,
-  // { setSubmitting },
-  // setMessageFromServer
-  {
-    /*
-  const url = "http://localhost:5000/api/login";
+export const submitLogin = (
+  values: unknown,
+  { setSubmitting }: { setSubmitting: (bool: boolean) => void },
+  setMessageFromServer: (msg: string) => void
+): void => {
+  const url = "http://localhost:8000/api/v1/users/auth/login/";
   const params = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -44,12 +43,26 @@ export const submitLogin = (): void =>
   };
 
   fetch(url, params)
-    .then((response) => response.json())
+    .then((response) => {
+      switch (response.status) {
+        case 200:
+          return response.json();
+        case 400:
+          setMessageFromServer("Bad request");
+          break;
+        default:
+          setMessageFromServer(`ERROR: ${response.status}`);
+          return;
+      }
+    })
     .then((res) => {
-      if (res.success) {
-        setInStorage("sessionId", { token: res.token });
-        window.location.href = "/";
-      } else setMessageFromServer(res.message);
+      if (res) {
+        alert(`key: ${res.key}`);
+        // setInStorage("sessionId", { token: res.key });
+        // window.location.href = "/";
+      } else {
+        // setMessageFromServer(`ERROR: ${res.status}`);
+      }
       setSubmitting(false);
     })
     .catch((reason) => {
@@ -57,10 +70,9 @@ export const submitLogin = (): void =>
       console.error(reason);
       setMessageFromServer("Please try again later.");
       setSubmitting(false);
+      return;
     });
-    */
-    alert("Log in");
-  };
+};
 
 export const submitLogout = (): void => {
   /*
