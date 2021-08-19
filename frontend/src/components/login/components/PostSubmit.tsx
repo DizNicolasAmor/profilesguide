@@ -5,12 +5,10 @@ interface PostSubmitProps {
 }
 
 const PostSubmit: FC<PostSubmitProps> = ({ messageFromServer }) => (
-  <div>
-    <div aria-live="assertive" aria-atomic role="alert">
-      {messageFromServer && (
-        <div className="m-3 text-danger">Login failed. {messageFromServer}</div>
-      )}
-    </div>
+  <div aria-live="assertive" aria-atomic role="alert">
+    {Boolean(messageFromServer) && (
+      <div className="m-3 text-danger">Login failed. {messageFromServer}</div>
+    )}
   </div>
 );
 
