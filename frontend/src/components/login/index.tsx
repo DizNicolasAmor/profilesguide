@@ -12,7 +12,7 @@ const Login: FC = () => {
   const [messageFromServer, setMessageFromServer] = useState("");
 
   return (
-    <CustomSection title="Login Form">
+    <CustomSection title="Login">
       <div className="text-center">
         <Formik
           initialValues={initialValues}
@@ -20,17 +20,14 @@ const Login: FC = () => {
           onSubmit={(values, { setSubmitting }) =>
             submitLogin(values, { setSubmitting }, setMessageFromServer)
           }
-          render={({ isSubmitting }) => (
+        >
+          {({ isSubmitting }) => (
             <LoginForm
               isSubmitting={isSubmitting}
               messageFromServer={messageFromServer}
-              setMessageFromServer={setMessageFromServer}
             />
           )}
-        />
-        <div className="mt-3">
-          <a href="/reset-password">I forgot my password</a>
-        </div>
+        </Formik>
       </div>
     </CustomSection>
   );
