@@ -16,6 +16,12 @@ const LoginForm: FC<LoginFormProps> = ({ isSubmitting, messageFromServer }) => {
       </div>
     );
 
+  const renderResetPasswordLink = () => (
+    <div className="mt-3">
+      <a href="/reset-password">I forgot my password</a>
+    </div>
+  );
+
   if (isSubmitting) {
     return <Spinner animation="border" variant="primary" />;
   }
@@ -60,9 +66,7 @@ const LoginForm: FC<LoginFormProps> = ({ isSubmitting, messageFromServer }) => {
           </Button>
         </div>
       </Form>
-      <div className="mt-3">
-        <a href="/reset-password">I forgot my password</a>
-      </div>
+      {renderResetPasswordLink()}
     </div>
   );
 };
