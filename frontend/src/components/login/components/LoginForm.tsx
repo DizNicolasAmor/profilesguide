@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import { Form, Field, ErrorMessage } from "formik";
 import { Button, Spinner } from "react-bootstrap";
-import PostSubmit from "./PostSubmit";
 import { inputs } from "../utils/FormHelpers";
 
 interface LoginFormProps {
@@ -10,15 +9,20 @@ interface LoginFormProps {
 }
 
 const LoginForm: FC<LoginFormProps> = ({ isSubmitting, messageFromServer }) => {
+  const renderErrorMessage = (msg: string) =>
+    Boolean(msg) && (
+      <div aria-live="assertive" aria-atomic role="alert">
+        <div className="m-3 text-danger">Login failed. {msg}</div>
+      </div>
+    );
+
   if (isSubmitting) {
     return <Spinner animation="border" variant="primary" />;
   }
 
   return (
     <div>
-      {Boolean(messageFromServer) && (
-        <PostSubmit messageFromServer={messageFromServer} />
-      )}
+      {renderErrorMessage(messageFromServer)}
       <Form>
         {inputs.map((input) => (
           <div key={input.name} className="m-3">
